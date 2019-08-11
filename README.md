@@ -21,3 +21,6 @@ A web application that allows users to search and like movies
 
 
 3.Register on https://www.themoviedb.org/?language=en-US and get an api key and use that in ver1.js to make it work
+
+
+4.Install MongoDB
