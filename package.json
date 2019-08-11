@@ -1,0 +1,23 @@
+{
+  "name": "mark1",
+  "version": "1.0.0",
+  "description": "first version",
+  "main": "login.js",
+  "scripts": {
+    "test": "hello there"
+  },
+  "author": "siddheshwar pathak",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "file-system": "^2.2.2",
+    "mongoose": "^5.5.1",
+    "moviedb": "^0.2.10",
+    "multer": "^1.4.2",
+    "nodemon": "^1.19.0",
+    "request": "^2.88.0"
+  }
+}

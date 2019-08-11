@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	<link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		*{
+			font-family: 'Mandali', sans-serif;
+			margin:2%;
+		}
+		img{
+			height: 360px;
+			width:240px; 
+  			border-radius: 4px;
+  			padding: 5px;
+  			box-shadow: 0 5px 8px #000;
+  			border-color:black;
+			border-radius: 20px;
+		}
+		i{
+			float:center;
+			color:#0047ab;
+		}
+		.d{
+			display: block;
+		}
+		.f{
+			max-height: 300px;
+			width: 1000px;
+			background-color: green;
+		}
+		*{
+  			box-sizing: border-box;
+		 }
+
+		/* Style the search field */
+		form.example input[type=text] {
+  			padding: 5px;
+  			font-size: 17px;
+  			border: 1px solid grey;
+  			float: left;
+  			width: 50%;
+  			background: #f1f1f1;
+		}
+
+		/* Style the submit button */
+		form.example button {
+  			float: left;
+  			width: 5%;
+  			padding: 12px;
+  			background: #2196F3;
+  			color: white;
+  			font-size: 10px;
+  			border: 1px solid grey;
+  			border-left: none; /* Prevent double borders */
+  			cursor: pointer;
+		}
+
+		form.example button:hover {
+  			background: #0b7dda;
+		}
+
+		/* Clear floats */
+		form.example::after {
+  			content: "";
+  			clear: both;
+  			display: table;
+		}
+
+	</style>
+	 <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 </script>
+</head>
+<body id="n">
+	<form class="example" action="/search_profile" method="POST">
+				<input type="text" placeholder="Search.." name="profile">
+				<button type="submit"><i class="fa fa-search"></i></button>
+	</form>
+	<button id="button">logout</button><button id="profile">Profile</button>
+	   <%for(i=0;i<l;i++){%>
+   			<div class="d">
+   				<fieldset style="box-shadow: 0 5px 10px #000;">
+   					<legend>
+	   					<img src= "<%=url+array[i]['poster_path'] %>">
+	   				</legend>
+			   		<h2 class="h" style="position: relative; transform: translate(-505, -50%);"><%=array[i]["title"]%><i id="<%=array[i]['title'] %>" onclick="myFunction(this,this.id)"class="fa fa-thumbs-o-up fa-lg like" name="like" value="like"></i></h2>
+					<h4 style="position: relative; transform: translate(-505, -50%);"><%=array[i]["overview"]%></h4>
+			   		<audio id="audio" src="facebook_chat_pop.mp3" ></audio>
+   				</fieldset>
+			</div>
+			<%for(j=0;j<len;j++){%>
+				<%if(array[i]["title"]==like[j]["movie_name"]){ %>
+					<script>
+						b=document.getElementById("<%=array[i]['title'] %>");
+						b.classList.toggle("fa-thumbs-up");
+		  				b.style.color='#0047ab';
+					</script>
+				<%}%>
+			<%}%>      
+   	   <%}%>
+  	<script type="text/javascript">
+  		function myFunction(x,id) {
+		  	x.classList.toggle("fa-thumbs-up");
+		  	x.style.color='#0047ab';
+  			var audio = document.getElementById("audio");
+			audio.play();
+    		$.post("/like",{data:id});
+		}	
+
+		b=document.querySelector('#button');
+		b.addEventListener('click',function(){
+			window.location.href="http://localhost:3000/logout";
+		})
+		profile=document.querySelector('#profile');
+		profile.addEventListener('click',function(req,res){
+			window.location.href="http://localhost:3000/profile";
+		})
+  	</script>
+</body>
+</html>

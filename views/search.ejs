@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <style>
+		img {
+  		 max-width:200px;
+		 max-height: 200px;
+		}
+		.center{
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform: translate(-50%,-50%);
+			text-align: center;
+			width: 40%;
+		}
+	 </style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="http://localhost:3000"><i class="fa fa-film" aria-hidden="true"></i>&nbsp;HOME</a>
+			<ul class="navbar-nav mr-auto">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  Profile
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							  <a class="dropdown-item" href="http://localhost:3000/profile">Visit Profile</a>
+							  <a class="dropdown-item" href="http://localhost:3000/search/image_upload">Change Profile Picture</a>
+							  <div class="dropdown-divider"></div>
+							  <a class="dropdown-item" href="http://localhost:3000/logout">Logout</a>
+							</div>
+						</li>
+			</ul>
+				<form action="/search_profile" method="POST" class="form-inline my-2 my-lg-0">
+					<input type="Search" class="form-control mr-lg-2" placeholder="Search For Profile" aria-label="Search" name="profile">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+		<!--	<form action="/profile_data" enctype="multipart/form-data" method="POST">
+					<input type="file"  name="picture" accept="image/*">
+				<input type="submit">
+		</form>
+		-->
+	</nav>
+	<div class="center">
+			<h1>Hello <%=name%></h1>
+			<img src="https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_960_720.jpg" alt="not available">
+   	 		<form action='/search_results' method="post">
+    			<h3>Search For A Movie</h3><input class="form-control form-group" type="text" name="movie_name" placeholder="Search for a Movie">
+    		<input class="btn btn-primary form-group" type="submit" name="submit">
+     </form>
+	</div>
+</body>
+</html>

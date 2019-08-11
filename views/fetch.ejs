@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	<style>
+		img {
+ 		 border: 2px solid rgb(41, 128, 185);
+  		 border-radius: 50%;
+     	 padding: 2px;
+  		 width: 200px;
+		}
+		.image{
+			position:absolute;
+			left:50%;
+			top:30%;
+			transform:translate(-50%,-50%);
+		}
+		.table{
+			position:absolute;
+			left:50%;
+			top:60%;
+			transform:translate(-50%,-50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="image">
+	<img src="/profile_img" alt="no image">
+	</div>
+	<div class="table">
+			<table border='1'>
+					<thead>
+						<td><h6>Liked Movies</h6></td>	
+					</thead>
+					<tbody>
+						<%for(var i=0;i<length;i++){ %>
+							<tr>
+								<td><%=data[i].movie_name%></td>
+							</tr>
+						<%}%>		
+					</tbody>
+				</table>
+				<button id="Search">Return To Search Page</button>
+				<button id="button">Logout</button>
+	</div>
+
+
+	<script type="text/javascript">
+		b=document.querySelector('#button');
+		b.addEventListener('click',function(){
+			window.location.href="http://localhost:3000/logout";
+		})
+		s=document.querySelector('#Search');
+		s.addEventListener('click',function(req,res){
+			window.location.href="http://localhost:3000/search";
+		})
+	</script>
+</body>
+</html>

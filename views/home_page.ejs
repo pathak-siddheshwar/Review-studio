@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search</title>
+	<link rel="icon" href="https://cdn.pixabay.com/photo/2016/03/31/18/36/cinema-1294496_960_720.png">
+	<link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
+	<style>
+		*{
+			color:azure;
+		}
+		body{
+ 		    background-image: url(adult-bar-cafe-cinema-375885.jpg);
+    		background-attachment: fixed;
+    		background-position: center;
+    		background-size: cover;
+		}
+		.a{
+			position: absolute;
+			left: 60%;
+			top: 55%;
+			height: 100px;
+			width: 800px;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="http://localhost:3000"><i class="fa fa-film" aria-hidden="true"></i>&nbsp;HOME</a>
+		<form class="form-inline" action="/signin_success" method="post">
+				Username&nbsp;<input type="text" class="form-control mr-sm-2" aria-label="Username" name="username"  required>
+				Password&nbsp;<input type="password" class="form-control mr-sm-2" aria-label="Password" name="password"  required>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">Sign In</button>&nbsp;
+				<button id="b2" class="btn btn-outline-success" type="button" onclick="document.getElementById('id01').style.display='block'" >Sign Up</button>
+		</form>
+	</nav>
+	<div class="a">
+		<h1 class="b">REVIEW STUDIO</h1>
+		<p class="c">Browse And Like Movies</p>
+	</div>
+   	<script type="text/javascript">
+   		b2=document.querySelector("#b2");
+   		b2.addEventListener('click',function(){
+   			window.location.href="http://localhost:3000/signup"
+   		});
+   	</script>
+</body>
+</html>

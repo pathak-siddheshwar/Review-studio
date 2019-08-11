@@ -1,0 +1,86 @@
+ <!--<button id="like" name="submit" type="submit" value="1">like</button>
+    <h1><%=users[0].name%></h1>-->
+    <!--<table border='1'>
+    	<thead>
+    		<td>Names I entered in the database</td>
+    	</thead>
+    	<tbody>
+    		<%for(var i=0;i<length;i++){ %>
+    			<tr>
+    				<td><%=users[i].name%></td>
+    			</tr>
+    		<%}%>		
+    	</tbody>
+    </table>
+	
+    <script type="text/javascript">
+    	$('#like').click(function(){
+    		$.post("/data","clicked");
+    	})	
+    </script>--> 
+    <!--<script type="text/javascript">
+    	button=document.getElementById("like");
+    	button.addEventListener('click',function(e){
+    		console.log("the button was clicked");
+    		fetch('/data',{method:'POST'})
+    		.then(function(response){
+    			if(response.ok){
+    				console.log('click was recorded');
+    				return;
+    			}
+    			throw new Error("request failed");
+
+    		})
+    		.catch(function(error){
+    			console.log(error);
+    		})
+    	})
+    </script>-->
+
+
+
+//like mechanism
+// clicked=0;
+// app.post('/data',urlencodedParser,function(req,res){
+    
+//  res.send("received");
+//  console.log(req.body.email);
+//  console.log(req.body.password);
+//  if(req.body)
+//  {
+//      clicked++;
+//      console.log("a button is clicked");
+//      console.log(clicked);
+//  }
+//  else{
+//      console.log("try harder");
+//  }
+//  if(req.body.submit=='Submit')
+//  {
+//      console.log('go for the button');
+//  }
+//  else{
+//      console.log('needs changes');
+//  }
+    
+// })
+
+
+
+
+
+fetching some entries
+app.get('/fetch',function(req,res){
+    //res.send('successful');
+     users.find().exec(function(err,u){
+        if (err) throw err;
+        for(i=0;i<u.length;i++)
+        {
+            console.log(u[i].name); 
+        }
+        length=u.length;
+        res.render('fetch',{data:u,length:length});
+    })
+    
+})  
+
