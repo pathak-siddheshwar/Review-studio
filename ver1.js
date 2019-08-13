@@ -33,33 +33,33 @@ var urlencodedParser = body_parser.urlencoded({ extended: false });//body parser
 
 
 //connecting to mongoDB
-// mongoose.connect('mongodb://0.0.0.0:27017/db', {useNewUrlParser: true},function(err){
-// 	if (err) throw err;
-// 	console.log('successfully connected');
-// });
+mongoose.connect('mongodb://18.218.11.92/:27017/db', {useNewUrlParser: true},function(err){
+	if (err) throw err;
+	console.log('successfully connected');
+});
 
 //defining schema for the collections
-// var userSchema=mongoose.Schema({
-// 	name:String,
-// 	email:String,
-// 	password:String //,
-// 	// image:{
-// 	//  	data:Buffer,contentType:String
-// 	// }
-// })
+var userSchema=mongoose.Schema({
+	name:String,
+	email:String,
+	password:String //,
+	// image:{
+	//  	data:Buffer,contentType:String
+	// }
+})
 
 
-// var likes=mongoose.Schema({
-// 	username:String,
-// 	movie_name:String
-// })
+var likes=mongoose.Schema({
+	username:String,
+	movie_name:String
+})
 
-// var images=mongoose.Schema({
-// 	name:String,
-// 	image:{
-// 		data:Buffer,contentType:String
-// 	}
-// })
+var images=mongoose.Schema({
+	name:String,
+	image:{
+		data:Buffer,contentType:String
+	}
+})
 
 var sess;//session variable
 
