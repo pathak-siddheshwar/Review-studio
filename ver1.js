@@ -33,7 +33,7 @@ var urlencodedParser = body_parser.urlencoded({ extended: false });//body parser
 
 
 //connecting to mongoDB
-mongoose.connect('mongodb://localhost:27017/db', {useNewUrlParser: true},function(err){
+mongoose.connect('mongodb://18.219.108.241:27017/db', {useNewUrlParser: true},function(err){
 	if (err) throw err;
 	console.log('successfully connected');
 });
