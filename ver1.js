@@ -33,7 +33,7 @@ var urlencodedParser = body_parser.urlencoded({ extended: false });//body parser
 
 
 //connecting to mongoDB
-mongoose.connect('mongodb://18.218.11.92/:27017/db', {useNewUrlParser: true},function(err){
+mongoose.connect('mongodb://http://ec2-18-218-11-92.us-east-2.compute.amazonaws.com:27017/db', {useNewUrlParser: true},function(err){
 	if (err) throw err;
 	console.log('successfully connected');
 });
@@ -82,11 +82,11 @@ app.get('/signup',function(req,res){
 
 
 //defining collection
-// var users=mongoose.model('users',userSchema);
+var users=mongoose.model('users',userSchema);
 
-// var likes=mongoose.model('likes',likes);
+var likes=mongoose.model('likes',likes);
 
-// var images=mongoose.model('images',images);
+var images=mongoose.model('images',images);
 
 
 //to find already regitered user
