@@ -13,7 +13,7 @@ app.use(session({secret: 'ssshhhhh',saveUninitialized: true,resave: true}));//se
 
 app.set('view engine','ejs');//setting the view engine for files as ejs
 
-var port=process.env.PORT||3000;// setting the default port 
+var port=process.env.PORT||80;// setting the default port 
 
 app.use('/',express.static(__dirname+'/views'));//setting root directory
 
