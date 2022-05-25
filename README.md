@@ -14,7 +14,7 @@ A web application that allows users to search and like movies
   How to install:
     
     
-    In comman line enter the following command:
+    In command line enter the following command:
       
       
       npm install package_name
